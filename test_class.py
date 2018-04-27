@@ -58,33 +58,33 @@ class cpb:
     @staticmethod
     def tobacco():
         '''To calculate various aspects related to Smoking related variability.
-        sm: life years lost to chronic conditions
-        q_sm: life years lost to acute conditions
-        sm_il: morbidity related quality added life years lost from chronic conditions
-        per_sm: morbidity related quality added life years lost from acute conditions
-        f_sm: total quality added life years lost
-        rel_sm: delivery of screening and counseling
-        m_sm: adherence with screening
-        a_m: effectiveness of counseling at changing behavior
-        t_sc: efficacy of behavior change at reducing chronic conditions
-        eff: efficacy of behavior change at reducing acute conditions
-        p_burden: weighted efficacy of behavior change at reducing total QAL lost
-        tob: predicted QALs lost'''
+        sm: number of smokers in birth cohert of 1000000
+        q_sm: avg gains in life expectancy for one quit
+        sm_il: quality of life years lost to smoking illness in birth cohert
+        per_sm: quality of life years lost per smoker
+        f_sm: portion of smokers who were former smokers
+        rel_sm: relative risk , former smoker vs current smoker
+        m_sm: QAL lost from morbidity of a continual smoker
+        a_m: QAL years saved from morbidity per smoker quit
+        t_sc: delivery of screening and counseling
+        eff: effectiveness of counseling
+        p_burden: clinically preventable burden saved
+        tob: predicted QALs lost due to smoking'''
 
         for i in range(0, counts):
-            sm = uniform(397500, 510000)  # a: Number of ever smokers in birth-cohort of 1,000,000
-            q_sm = 5.65  # b: Average gains in life expentancy for one quit
+            sm = uniform(397500, 510000)
+            q_sm = 5.65
             q_sm = uniform(0.75 * q_sm, 1.25 * q_sm)
-            sm_il = 177266  # c: QALYs lost to smoking atributable illness in birth cohort
+            sm_il = 177266
             sm_il = uniform(0.5 * sm_il, 1.5 * sm_il)
-            per_sm = sm_il / sm  # d: QALYs lost to smoking-attributable illnesss per smoker
-            f_sm = uniform(0.47, 0.57)  # e: Portion of ever-smokers who are former smokers
-            rel_sm = uniform(0.20, 0.56)  # f: Relative risk of SA disease for former smokers compared to current ones
-            m_sm = per_sm / (f_sm * rel_sm + (1 - f_sm))  # g: QALYs lost from smoking morbidity percontinuing smoker
-            a_m = m_sm - m_sm * rel_sm  # h: QALYs saved from avoided morbidity per smoker quit
-            t_sc = uniform(0.05, 0.25)  # Delivery of screening and counseling
-            eff = 0.030  # j: Long-term effectiveness of repeated counseling in inducing quits
-            p_burden = sm * (q_sm + a_m) * eff  # k: Clinically preventable burden (QALYs saved)
+            per_sm = sm_il / sm
+            f_sm = uniform(0.47, 0.57)
+            rel_sm = uniform(0.20, 0.56)
+            m_sm = per_sm / (f_sm * rel_sm + (1 - f_sm))
+            a_m = m_sm - m_sm * rel_sm
+            t_sc = uniform(0.05, 0.25)
+            eff = 0.030
+            p_burden = sm * (q_sm + a_m) * eff
             tob = tob.append(p_burden)
         return tob
 
