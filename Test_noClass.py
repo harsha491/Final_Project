@@ -9,43 +9,41 @@ counts = 1000000  # Number of simulations
 
 # modelling for 1,000,000 population
 for i in range(0, counts):
-    ll_cc = 45000 * 20  # ll_cc: Alcohol-atributable life years lost to chronic conditions
-    ll_cc = uniform(0.80 * ll_cc, 1.20 * ll_cc)  # ll_cc: Range: =/- 20%
-    ll_ac = 45000 * 10  # ll_ac: Alcohol-atributable life years lost to acute conditions
-    ll_ac = uniform(0.80 * ll_ac, 1.20 * ll_ac)  # ll_ac: Range: =/- 20%
-    m_cc = 40000 * 20  # m_cc: Alcohol-atributable morbidity-related quality added life(QAL years) lost from chronic conditions
-    m_cc = uniform(0.60 * m_cc, 1.40 * m_cc)  # m_cc: Range: =/- 40%
-    m_ac = 40000 * 10  # m_ac: Alcohol-atributable morbidity-related QAL lost from acute conditions
-    m_ac = uniform(0.60 * m_ac, 1.40 * m_ac)  # m_ac: Range: =/- 40%
-    tot_ll = ll_cc + ll_ac + m_cc + m_ac  # tot_ll: Total alcohol-attributable QAL lost
-    d_sc = uniform(0.05, 0.25)  # d_sc: Delivery of screening and counseling
-    a_sc = uniform(0.8, 0.95)  # a_sc: Adherence with screening
-
-    e_sc = uniform(0.10, 0.35)  # e_sc: Effectiveness of counseling at changing behaviour
-    e_cc = uniform(0.75, 1)  # e_cc: Efficacy of behaviour change at reducing chronic conditions
-    e_ac = uniform(0.10, 0.50)  # e_ac: Efficacy of behaviour change at reducing acute conditions
-    e_w = 1 / tot_ll * (e_cc * (ll_ac + m_ac) + e_ac * (
-                ll_cc + m_cc))  # e_w: Weighted efficacy of behaviour change at reducing total alcohol-attributable QAL lost
-    p_ll = tot_ll / (1 - d_sc * e_sc * e_w)  # p_ll: Predicted alcohol-attributable QAL lost
-    gain_ql_alc = p_ll * a_sc * e_sc * e_w  # gain_ql_alc: QAL gained, Clinically preventable
+    ll_cc = 45000 * 20
+    ll_cc = uniform(0.80 * ll_cc, 1.20 * ll_cc)
+    ll_ac = 45000 * 10
+    ll_ac = uniform(0.80 * ll_ac, 1.20 * ll_ac)
+    m_cc = 40000 * 20
+    m_cc = uniform(0.60 * m_cc, 1.40 * m_cc)
+    m_ac = 40000 * 10
+    m_ac = uniform(0.60 * m_ac, 1.40 * m_ac)
+    tot_ll = ll_cc + ll_ac + m_cc + m_ac
+    d_sc = uniform(0.05, 0.25)
+    a_sc = uniform(0.8, 0.95)
+    e_sc = uniform(0.10, 0.35)
+    e_cc = uniform(0.75, 1)
+    e_ac = uniform(0.10, 0.50)
+    e_w = 1 / tot_ll * (e_cc * (ll_ac + m_ac) + e_ac * (ll_cc + m_cc))
+    p_ll = tot_ll / (1 - d_sc * e_sc * e_w)
+    gain_ql_alc = p_ll * a_sc * e_sc * e_w
 
     alc.append(gain_ql_alc)
 
 # modelling for 1,000,000 population
 for i in range(0, counts):
-    sm = uniform(397500, 510000)  # sm: Number of ever smokers in birth-cohort of 1,000,000
-    q_sm = 5.65  # q_sm: Average gains in life expentancy for one quit
+    sm = uniform(397500, 510000)
+    q_sm = 5.65
     q_sm = uniform(0.75 * q_sm, 1.25 * q_sm)
-    sm_il = 177266  # sm_il: QAL lost to smoking atributable illness in birth cohort
+    sm_il = 177266
     sm_il = uniform(0.5 * sm_il, 1.5 * sm_il)
-    per_sm = sm_il / sm  # per_sm: QAL lost to smoking-attributable illnesss per smoker
-    f_sm = uniform(0.47, 0.57)  # f_sm: Portion of ever-smokers who are former smokers
-    rel_sm = uniform(0.20, 0.56)  # rel_sm: Relative risk of SA disease for former smokers compared to current ones
-    m_sm = per_sm / (f_sm * rel_sm + (1 - f_sm))  # m_sm: QAL lost from smoking morbidity percontinuing smoker
-    a_m = m_sm - m_sm * rel_sm  # a_m: QAL saved from avoided morbidity per smoker quit
-    t_sc = uniform(0.05, 0.25)  # t_sc: Delivery of screening and counseling
-    eff = 0.030  # eff: Long-term effectiveness of repeated counseling in inducing quits
-    p_burden = sm * (q_sm + a_m) * eff  # p_burden: Clinically preventable burden (QAL saved)
+    per_sm = sm_il / sm
+    f_sm = uniform(0.47, 0.57)
+    rel_sm = uniform(0.20, 0.56)
+    m_sm = per_sm / (f_sm * rel_sm + (1 - f_sm))
+    a_m = m_sm - m_sm * rel_sm
+    t_sc = uniform(0.05, 0.25)
+    eff = 0.030
+    p_burden = sm * (q_sm + a_m) * eff
     tob.append(p_burden)
 
 # Sort and Calculate Confidence Intervals
