@@ -13,8 +13,7 @@ class cpb:
     @staticmethod
     def alcohol():
 
-        '''
-        To calculate various aspects related to Alcoholism related variability.
+        '''To calculate various aspects related to Alcoholism related variability.
         ll_cc: life years lost to chronic conditions
         ll_ac: life years lost to acute conditions
         m_cc: morbidity related quality added life years lost from chronic conditions
@@ -28,8 +27,7 @@ class cpb:
         e_w: weighted efficacy of behavior change at reducing total QAL lost
         p_ll: predicted QALs lost
         gain_ql_alc: quality added life years gained
-        alc: appended list of quality of life years gained
-        '''
+        alc: appended list of quality of life years gained'''
 
 
         for i in range(0, counts):
