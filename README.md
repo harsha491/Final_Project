@@ -14,11 +14,17 @@ After comments on moodle I also tried in to factor individual health care costs 
 ## Simulation's variables of uncertainty
 
 Number of people visiting the NGO for health related issues
+
 Fluctuations year on year for three years
+
 Clinically Preventable Disease vulnerability
+
 Possible chronic or acute side effects of the existing condition
+
 Effectiveness of Intervention
+
 Long term adherence to intervention
+
 
 ## Hypothesis or hypotheses before running the simulation:
 
