@@ -24,13 +24,13 @@ for i in range(0, counts):
     alc_t_lost = alc_chr + alc_acu + alc_m_chr + alc_m_acu  # Total alcohol-attributable QALYs lost
 
     # calculating effects of screening
-    alc_scr = uniform(0.02, 0.7)  # Delivery of screening and counseling
-    alc_adh = uniform(0.2, 0.95)  # Adherence with screening
-    alc_scr_eff = uniform(0.20, 0.85)  # Effectiveness of counseling at changing behaviour
-    alc_eff_chr = uniform(0.65, 1)  # Efficacy of behaviour change at reducing chronic conditions
-    alc_eff_acu = uniform(0.20, 0.80)  # Efficacy of behaviour change at reducing acute conditions
+    alc_scr = uniform(0.02, 0.7)  # alc_scr: Delivery of screening and counseling
+    alc_adh = uniform(0.2, 0.95)  # alc_adh: Adherence with screening
+    alc_scr_eff = uniform(0.20, 0.85)  # alc_scr_eff: Effectiveness of counseling at changing behaviour
+    alc_eff_chr = uniform(0.65, 1)  # alc_eff_chr: Efficacy of behaviour change at reducing chronic conditions
+    alc_eff_acu = uniform(0.20, 0.80)  # alc_eff_acu: Efficacy of behaviour change at reducing acute conditions
     alc_t_eff = 1 / alc_t_lost * (alc_eff_acu * (alc_acu + alc_m_acu) + alc_eff_chr * (alc_chr + alc_m_chr))
-    # Weighted efficacy of behaviour change at reducing total alcohol-attributable QALYs lost
+    # alc_t_eff: Weighted efficacy of behaviour change at reducing total alcohol-attributable QALYs lost
     # calculating quality adjusted life years lost and gained
     alc_y_lost = alc_t_lost / (1 - alc_scr * alc_scr_eff * alc_t_eff)  # Predicted alcohol-attributable QALYs lost
     alc_y_gain = alc_y_lost * alc_adh * alc_scr_eff * alc_t_eff  # QALYS gained, CPB
@@ -141,8 +141,8 @@ def impact_alc():
 
 
     """
-    # alc_patient_volume = np.random.randint(300,500)
-    alc_patient_volume = 300  # number of patients interviened by the NGO
+    alc_patient_volume = np.random.randint(300,500)
+
     Fluctuation = np.random.random()  # year on year patient traffic fluctuation
     QALY_dollars = np.random.randint(125000, 150000)  # QALYs converted to dollars
 
@@ -163,7 +163,7 @@ def impact_alc():
     print("Monetary value (Stdev): ", QALYs_year_stdev * QALY_dollars)
     print("At Adherence with screening of {0:.2f}".format(alc_adh * 100),
           "% and a behavior changefactor of {0:.2f}".format(alc_t_eff * 100), "%")
-    print("Quality savings for individual per year {0:.2f}".format(QALYs_year_mean * QALY_dollars / alc_patient_volume),
+    print("average quality savings for individual per year {0:.2f}".format(QALYs_year_mean * QALY_dollars / alc_patient_volume),
           "Dollars for", counts, "simulations")
 
 
