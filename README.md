@@ -9,6 +9,7 @@
 (be sure to read the instructions given in course Moodle)
 
 The purpose of this project is to simulate the health impact and savings a small NGO serving 300-500 people can have through simple interventions and counseling for clinically preventable diseases over a period of three years.
+After comments on moodle I also tried in to factor individual health care costs for a variable percentage of intervention level and a lariable percentage of effectiveness or adherence to the intervention.
 
 ## Simulation's variables of uncertainty
 
