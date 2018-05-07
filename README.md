@@ -33,6 +33,7 @@ Run the file Tobacco to find simulated results for cohort, individual interventi
 
 # Modify values in Alcohol to simulate for various outcomes :
 alc_chr: Alcohol-attributable life years lost to chronic conditions and Range: =/- 20%
+
 alc_acu: Alcohol-attributable life years lost to acute conditions and Range: =/- 20%
 alc_m_chr: Alcohol-attributable morbidity-related QALYs lost from chronic conditions
 alc_m_acu: Alcohol-attributable morbidity-related QALYs lost from acute conditions
