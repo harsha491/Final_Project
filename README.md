@@ -34,12 +34,23 @@ For a random Monte Carlo simulation the results for alchol intervention are as f
 Patients: 406
 Year on fluctuation: 0.14802505875409966
 Monetary value of one QALY:  147880
+
 Alcohol Mean QALYS/year:  1.18551115266
+
 Alcohol_Stdev_QALYS/year:  0.799210074467
+
 Monetary value (Mean):  175313.389255
+
 Monetary value (Stdev):  118187.185812
-At Adherence with screening of 23.30 % and a behavior changefactor of 75.39 %
-Quality savings for individual per year 431.81 Dollars for 100000 simulations
+
+At Adherence with screening of 23.30 % and a behavior change factor of 75.39 %, average quality savings for individual per year 431.81 Dollars for 100000 simulations
+
+
+This gives and idea on how muc a small Non-Government Organization or a primary health care centre can save in health care costs and benefet the quality of life of people through simple interventions.
+An NGO working in public health could take up clinically preventable burdens (smoking, alcohol, hiv, influenza, hypertension, and many more) more vigorously and save thousands of dollars on an average every year in health care costs and improve quality of life.
+
+the code was adjusted multiple times to get closer to literature available on CPBs and WHO metrics. The code was also modified in order to see impacts on individual health care.
+
 
 
 ## Instructions on how to use the program:
