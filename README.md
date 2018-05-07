@@ -31,9 +31,8 @@ My results have proved that there is a considerable health care cost saved with 
 Run the file Alcohol to find simulated results for cohort, individual intervention, related histograms, impact of the NGO and impact on individual health care cost.
 Run the file Tobacco to find simulated results for cohort, individual intervention, related histograms, impact of the NGO and impact on individual health care cost.
 
-# Modify values in Alcohol to simulate for various outcomes :
+### Modify values in Alcohol to simulate for various outcomes :
 alc_chr: Alcohol-attributable life years lost to chronic conditions and Range: =/- 20%
-
 alc_acu: Alcohol-attributable life years lost to acute conditions and Range: =/- 20%
 alc_m_chr: Alcohol-attributable morbidity-related QALYs lost from chronic conditions
 alc_m_acu: Alcohol-attributable morbidity-related QALYs lost from acute conditions
@@ -44,6 +43,15 @@ alc_eff_chr: Efficacy of behaviour change at reducing chronic conditions
 alc_eff_acu: Efficacy of behaviour change at reducing acute conditions
 alc_t_eff: Weighted efficacy of behaviour change at reducing total alcohol-attributable QALYs lost
 alc_patient_volume: number of patients interviened by the NGO
+Fluctuation: year on year patient traffic fluctuation
+QALY_dollars: QALYs converted to dollars
+
+### Modify values in Tobacco to simulate for various outcomes :
+frm_sm: Portion of ever-smokers who are former smokers
+rel_rsk: Relative risk of smoking disease for former smokers compared to current
+beh_ch =  change in behavior
+ff_sm: Long-term effectiveness of counseling inducing quits
+patient_volume: number of patients interviened by the NGO
 Fluctuation: year on year patient traffic fluctuation
 QALY_dollars: QALYs converted to dollars
 
