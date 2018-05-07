@@ -27,6 +27,20 @@ My results have proved that there is a considerable health care cost saved with 
 
 ## Analytical Summary of your findings: (e.g. Did you adjust the scenario based on previous simulation outcomes?  What are the management decisions one could make from your simulation's output, etc.)
 
+The program is intended to look at health care costs an NGO would be able to save by converting the quality adjusted life years of interventions on alcohol consumption and smoking. For this purpose the program considers the NGO serves anywhere between 300-500 patients a year with a random fluctuation over three year period. The mean has been calculated for a cohort of 4,000,000 population and health care effects and loss to chronic and acute diseases have been factored in using existing literature over clinically preventable burden.
+
+For a random Monte Carlo simulation the results for alchol intervention are as follows:
+
+Patients: 406
+Year on fluctuation: 0.14802505875409966
+Monetary value of one QALY:  147880
+Alcohol Mean QALYS/year:  1.18551115266
+Alcohol_Stdev_QALYS/year:  0.799210074467
+Monetary value (Mean):  175313.389255
+Monetary value (Stdev):  118187.185812
+At Adherence with screening of 23.30 % and a behavior changefactor of 75.39 %
+Quality savings for individual per year 431.81 Dollars for 100000 simulations
+
 
 ## Instructions on how to use the program:
 Run the file Alcohol to find simulated results for cohort, individual intervention, related histograms, impact of the NGO and impact on individual health care cost.
